@@ -8,6 +8,8 @@ import org.kohsuke.MetaInfServices;
 
 import java.util.Properties;
 
+import static javax.swing.UIManager.put;
+
 @MetaInfServices
 public class DmgrThingComBoot implements ThingComBoot {
 
@@ -15,11 +17,13 @@ public class DmgrThingComBoot implements ThingComBoot {
 
     @Override
     public Specifications getSpecifications() {
+        //Properties a = new Properties(){{put("sss","dd");}};
         return () -> new Properties() {{
             put("AUTHOR", "oldmanpushcart@gmail.com");
             put("VERSION", "1.0.0-SNAPSHOT");
             put("DATE", "2020-12-02");
         }};
+
     }
 
     @Override

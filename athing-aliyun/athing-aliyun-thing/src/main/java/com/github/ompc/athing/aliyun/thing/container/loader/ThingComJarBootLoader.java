@@ -31,6 +31,7 @@ public class ThingComJarBootLoader extends ThingComBootLoader {
 
     @Override
     public ThingCom[] onLoad(String productId, String thingId) throws Exception {
+        // 自定义UrlClassLoader来加载comJarFile
         final ThingComJarClassLoader loader = new ThingComJarClassLoader(comJarFile, getClass().getClassLoader());
         return new LinkedHashSet<ThingCom>() {{
             try {

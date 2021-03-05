@@ -29,7 +29,7 @@ public class DependentSetTestCase {
         dependents.depends("A", new String[]{"B"});
 
         final List<String> list = new ArrayList<>(dependents);
-
+        System.out.println(list);
         assertIsBehind(list, "A", new String[]{"B", "C", "G"});
         assertIsBehind(list, "C", new String[]{"G"});
         assertIsBehind(list, "D", new String[]{"E", "F", "H", "A", "B", "C", "G"});

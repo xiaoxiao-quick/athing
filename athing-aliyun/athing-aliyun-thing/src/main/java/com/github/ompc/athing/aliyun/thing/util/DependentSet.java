@@ -4,11 +4,15 @@ import java.util.*;
 
 /**
  * 依赖关系
- *
+ * 测试代码见{@link com.github.ompc.athing.aliyun.qatest.util.DependentSetTestCase}
  * @param <E> 元素
  */
 public class DependentSet<E> extends HashSet<E> {
 
+    // 递归的table
+    // key   value
+    // A   Set {A1, A2, A3}
+    // A1   Set{A11, A12, A13}
     private final Map<E, Set<E>> table = new HashMap<>();
 
     @Override
@@ -37,6 +41,7 @@ public class DependentSet<E> extends HashSet<E> {
      *
      * @param element 元素
      * @param depends 依赖家族集合
+     * @example
      * @return 依赖家族集合
      */
     private Set<E> recGetDepends(E element, Set<E> depends) {
@@ -87,5 +92,6 @@ public class DependentSet<E> extends HashSet<E> {
         }
 
     }
+
 
 }
